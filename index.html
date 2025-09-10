@@ -119,8 +119,7 @@
         // Exibe o texto e a imagem após a rolagem
         document.addEventListener("scroll", () => {
             const text = document.getElementById("text");
-            const image = document.getElementById("image");
-
+            
             if (window.scrollY > window.innerHeight / 2) {
                 text.style.opacity = 1; // Exibe o texto
                 image.style.opacity = 1; // Exibe a imagem
@@ -130,6 +129,7 @@
         // Define o título como visível após a animação
         document.addEventListener("DOMContentLoaded", () => {
             const title = document.getElementById("title");
+            const image = document.getElementById("image");
             title.style.opacity = 1; // Torna o título visível
         });
     </script>
