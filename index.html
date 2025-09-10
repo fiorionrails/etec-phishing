@@ -7,9 +7,8 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             margin: 0;
             font-family: sans-serif;
             background-color: #f0f0f0;
@@ -18,30 +17,60 @@
 
         .container {
             text-align: center;
+            margin-top: 10vh;
         }
 
         h1 {
             font-size: 2.5em;
-            /* Aplica a nova animação 'fadeIn' */
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        /* Define a animação de fade-in */
+        .arrow {
+            margin-top: 20px;
+            font-size: 2em;
+            animation: bounce 1.5s infinite;
+        }
+
         @keyframes fadeIn {
             0% {
-                opacity: 0; /* Começa totalmente transparente */
-                transform: translateY(20px); /* Começa um pouco mais baixo */
+                opacity: 0;
+                transform: translateY(20px);
             }
             100% {
-                opacity: 1; /* Termina totalmente visível */
-                transform: translateY(0); /* Termina na posição original */
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Estilos para telas menores (responsividade) */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .image {
+            margin: 20px 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text {
+            max-width: 800px;
+            text-align: justify;
+            margin: 50px 20px;
+            line-height: 1.6;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.8em;
+            }
+
+            .text {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -49,6 +78,34 @@
 <body>
     <div class="container">
         <h1>coletando informações</h1>
+        <img class="image" src="fishing amor.png" alt="Imagem ilustrativa sobre phishing">
+        <div class="arrow">⬇</div>
+    </div>
+    <div class="text">
+        <p>Bem-vindo(a)! Aqui vai um aviso que vale ouro. 💰</p>
+        <p>Imagine um ladrão que não arromba sua porta, mas te convence a entregar a chave. Esse é o <b> phishing</b>. É um truque para roubar seus dados mais importantes, como senhas e informações de cartão.</p>
+        
+        <p>🚨 <strong>Acenda o Alerta Vermelho!</strong> Desconfie se você vir...</p>
+        <ul>
+            <li><strong>URGÊNCIA TOTAL:</strong> Mensagens com "Sua conta será bloqueada!" ou "Clique AGORA para não perder!". Criminosos adoram criar pânico.</li>
+            <li><strong>OFERTA IRRESISTÍVEL:</strong> Aquele prêmio que você não pediu ou um desconto bom demais para ser verdade? Provavelmente é uma isca. 🎣</li>
+            <li><strong>ERROS BÁSICOS:</strong> Erros de português, logos estranhas ou um design amador são sinais claros de fraude.</li>
+            <li><strong>LINKS ESTRANHOS:</strong> Antes de clicar, passe o mouse sobre o link (ou pressione e segure no celular) para ver o endereço real. Se parecer esquisito, não vá!</li>
+        </ul>
+        <p><strong>Regra de Ouro:</strong> Bancos, redes sociais e empresas sérias NUNCA pedirão sua senha ou dados completos por e-mail ou SMS. Ponto final.</p>
+        <p>🛡️ <strong>Seu Escudo Digital: Como se Proteger?</strong></p>
+        <ul>
+            <li><strong>PENSE ANTES DE CLICAR.</strong> Essa é a dica mais importante. Um segundo de desconfiança pode salvar dias de dor de cabeça.</li>
+            <li><strong>VÁ PELA VIA OFICIAL.</strong> Recebeu um e-mail do seu banco? Em vez de clicar no link, abra seu navegador e digite você mesmo o endereço do site oficial para checar se a informação é real.</li>
+            <li><strong>CRIE SENHAS ÚNICAS.</strong> Use senhas diferentes e fortes para seus serviços importantes. Assim, se uma for roubada, as outras contas continuam seguras.</li>
+        </ul>
+        <p>🆘 <strong>Ops, acho que cliquei... E agora?</strong></p>
+        <ul>
+            <li><strong>TROQUE A SENHA IMEDIATAMENTE!</strong> Mude a senha do site em questão e de qualquer outro lugar onde você a usava.</li>
+            <li><strong>LIGUE PARA O SEU BANCO.</strong> Se seus dados financeiros foram expostos, contate seu banco na hora e explique a situação.</li>
+            <li><strong>AVISE AS PESSOAS.</strong> Alerte amigos e familiares, pois os golpistas podem usar sua conta para tentar enganá-los.</li>
+        </ul>
+        <p>Pronto! Agora você está mais preparado(a).</p>
     </div>
 </body>
 </html>
