@@ -59,6 +59,7 @@
             max-width: 100%;
             height: auto;
             opacity: 0;
+            animation: fadeIn 1.5s ease-in-out;
             transition: opacity 0.5s ease-in-out;
         }
 
@@ -116,21 +117,21 @@
     </div>
 
     <script>
-        // Exibe o texto e a imagem após a rolagem
+        // Exibe o texto após a rolagem
         document.addEventListener("scroll", () => {
             const text = document.getElementById("text");
             
             if (window.scrollY > window.innerHeight / 2) {
                 text.style.opacity = 1; // Exibe o texto
-                image.style.opacity = 1; // Exibe a imagem
             }
         });
 
-        // Define o título como visível após a animação
+        // Define o título e a imagem como visíveis após a animação
         document.addEventListener("DOMContentLoaded", () => {
             const title = document.getElementById("title");
             const image = document.getElementById("image");
             title.style.opacity = 1; // Torna o título visível
+            image.style.opacity = 1; // Torna a imagem visível
         });
     </script>
 </body>
