@@ -55,6 +55,8 @@
             margin: 20px 0;
             max-width: 100%;
             height: auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .text {
@@ -77,8 +79,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>coletando informações</h1>
-        <img class="image" src="fishing amor.png" alt="Imagem ilustrativa sobre phishing">
+        <h1 id="title">coletando informações</h1>
+        <img id="image" class="image" src="fishing amor.png" alt="Imagem ilustrativa sobre phishing">
         <div class="arrow">⬇</div>
     </div>
     <div class="text">
@@ -107,5 +109,18 @@
         </ul>
         <p>Pronto! Agora você está mais preparado(a).</p>
     </div>
+
+    <script>
+        // Espera a animação do título terminar antes de exibir a imagem
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.getElementById("title");
+            const image = document.getElementById("image");
+
+            // Define o tempo da animação do título (1.5s)
+            setTimeout(() => {
+                image.style.opacity = 1; // Exibe a imagem
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
