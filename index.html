@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coletando Informações - Fade-in</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            /* Aplica a nova animação 'fadeIn' */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Define a animação de fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; /* Começa totalmente transparente */
+                transform: translateY(20px); /* Começa um pouco mais baixo */
+            }
+            100% {
+                opacity: 1; /* Termina totalmente visível */
+                transform: translateY(0); /* Termina na posição original */
+            }
+        }
+
+        /* Estilos para telas menores (responsividade) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>coletando informações</h1>
+    </div>
+</body>
+</html>
