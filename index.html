@@ -6,27 +6,30 @@
     <title>Coletando Informações - Fade-in</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin: 0;
             font-family: sans-serif;
             background-color: #f0f0f0;
             color: #333;
+            overflow-x: hidden;
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
-            margin-top: 10vh;
         }
 
         h1 {
             font-size: 2.5em;
             animation: fadeIn 1.5s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .arrow {
-            margin-top: 20px;
             font-size: 2em;
             animation: bounce 1.5s infinite;
         }
@@ -64,6 +67,8 @@
             text-align: justify;
             margin: 50px 20px;
             line-height: 1.6;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         @media (max-width: 600px) {
@@ -83,7 +88,7 @@
         <img id="image" class="image" src="fishing amor.png" alt="Imagem ilustrativa sobre phishing">
         <div class="arrow">⬇</div>
     </div>
-    <div class="text">
+    <div class="text" id="text">
         <p>Bem-vindo(a)! Aqui vai um aviso que vale ouro. 💰</p>
         <p>Imagine um ladrão que não arromba sua porta, mas te convence a entregar a chave. Esse é o <b> phishing</b>. É um truque para roubar seus dados mais importantes, como senhas e informações de cartão.</p>
         
@@ -111,15 +116,21 @@
     </div>
 
     <script>
-        // Espera a animação do título terminar antes de exibir a imagem
-        document.addEventListener("DOMContentLoaded", () => {
-            const title = document.getElementById("title");
+        // Exibe o texto e a imagem após a rolagem
+        document.addEventListener("scroll", () => {
+            const text = document.getElementById("text");
             const image = document.getElementById("image");
 
-            // Define o tempo da animação do título (1.5s)
-            setTimeout(() => {
+            if (window.scrollY > window.innerHeight / 2) {
+                text.style.opacity = 1; // Exibe o texto
                 image.style.opacity = 1; // Exibe a imagem
-            }, 1500);
+            }
+        });
+
+        // Define o título como visível após a animação
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.getElementById("title");
+            title.style.opacity = 1; // Torna o título visível
         });
     </script>
 </body>
